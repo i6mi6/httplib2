@@ -7,25 +7,17 @@ venv*/
 # Packages
 *.egg
 *.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
+.eggs/
 .installed.cfg
-lib
-lib64
-
-# Installer logs
+build/
+dist/
 pip-log.txt
 
 # Unit test / coverage reports
 .coverage
+.coverage.*
 .tox
-nosetests.xml
+htmlcov/
 
 # Translations
 *.mo
@@ -35,8 +27,6 @@ nosetests.xml
 .project
 .pydevproject
 
-# Mercurial
-.hg
-
 # httplib2
-.cache
+.cache/
+_httplib2_test_cache/

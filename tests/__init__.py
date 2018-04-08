@@ -15,6 +15,7 @@ import shutil
 import six
 import socket
 import struct
+import sys
 import threading
 import time
 import traceback
@@ -268,7 +269,8 @@ def server_socket(fun, request_count=1, timeout=5):
             if gcounter[0] > request_count:
                 gresult[0] = Exception('Request count expected={0} actual={1}'.format(request_count, gcounter[0]))
         except Exception as e:
-            traceback.print_exc()
+            # traceback.print_exc caused IOError: concurrent operation on sys.stderr.close() under setup.py test
+            sys.stderr.write(traceback.format_exc().encode())
             gresult[0] = e
 
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
