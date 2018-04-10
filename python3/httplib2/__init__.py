@@ -1,3 +1,4 @@
+# coding: utf-8
 """
 httplib2
 
@@ -131,7 +132,7 @@ CA_CERTS = os.path.join(
 # PROTOCOL_TLS is python 3.5.3+. PROTOCOL_SSLv23 is deprecated.
 # Both PROTOCOL_TLS and PROTOCOL_SSLv23 are equivalent and means:
 # > Selects the highest protocol version that both the client and server support.
-# > Despite the name, this option can select “TLS” protocols as well as “SSL”.
+# > Despite the name, this option can select "TLS" protocols as well as "SSL".
 # source: https://docs.python.org/3.5/library/ssl.html#ssl.PROTOCOL_TLS
 DEFAULT_TLS_VERSION = getattr(ssl, 'PROTOCOL_TLS', None) or getattr(ssl, 'PROTOCOL_SSLv23')
 
